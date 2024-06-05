@@ -1,13 +1,14 @@
 .link {
   border-radius: 100px;
-  background-color: $red;
+  background-color: $white;
   display: flex;
-  padding: 16px 60px;
+  padding: 16px 32px;
   justify-content: center;
   align-items: center;
   width: 150px;
   font-size: 16px;
-  color: $white;
+  border: 1px solid $typography-grey;
+  color: $typography-black;
   transition:
     background-color $animation-duration $animation-time-function,
     font-weight $animation-duration $animation-time-function;
@@ -18,8 +19,7 @@
 
   &:hover,
   &:focus {
-    background-color: $red-hover;
-    color: $white;
+    border: 1px solid $red-hover;
     font-weight: 700;
   }
 

@@ -1,5 +1,7 @@
 import { sprite } from 'shared/icons';
 import s from './Header.module.scss';
+import Button from 'shared/components/Button/Button';
+import ButtonLoadMore from 'shared/components/ButtonLoadMore/ButtonLoadMore';
 
 const Header = () => {
   return (
@@ -96,6 +98,9 @@ const Header = () => {
       </svg>
 
       <h1>Home Page</h1>
+
+      <Button>Search</Button>
+      <ButtonLoadMore>Load more</ButtonLoadMore>
     </div>
   );
 };
