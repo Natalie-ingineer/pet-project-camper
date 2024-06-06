@@ -1,18 +1,34 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
-import { MainPage, BlogListPage, BlogPage } from './pages';
+import { Suspense, lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+// import { NavBar } from './NavBar';
+import Loader from './modules/Loader/Loader';
 
-function App() {
+const HomePage = lazy(() => import('./pages/HomePage'));
+const Catalog = lazy(() => import('./pages/Catalog'));
+const FavoritePage = lazy(() => import('./pages/FavoritePage'));
+// const DetailsPage = lazy(() => import('./pages/DetailsPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+
+// const Features = lazy(() => import('./Features'));
+// const Reviews = lazy(() => import('./Reviews'));
+
+const App = () => {
   return (
-    <>
-      <Routes>
-        <Route index element={<MainPage />} />
-        <Route path="blog" element={<BlogListPage />} />
-        <Route path="blog/:blogId" element={<BlogPage />} />
-
-        <Route path="*" element={<Navigate to={'/'} />} />
-      </Routes>
-    </>
+    <div>
+      {/* <NavBar /> */}
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/favorite" element={<FavoritePage />}>
+            {/* <Route path="features" element={<Features />} />
+            <Route path="reviews" element={<Reviews />} /> */}
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+    </div>
   );
-}
+};
 
 export default App;
