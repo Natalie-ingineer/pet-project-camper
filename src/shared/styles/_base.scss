@@ -1,5 +1,6 @@
 @import './colors';
 @import './variables';
+@import './breakpoints';
 
 :root {
   font-family:
@@ -29,6 +30,25 @@ html {
 
 body {
   margin: 0;
+  padding: 50px 24px;
+}
+
+@media screen and (min-width: $mobile) {
+  body {
+    padding: 50px 24px;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  body {
+    padding: 70px 36px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  body {
+    padding: 100px 64px;
+  }
 }
 
 h1,

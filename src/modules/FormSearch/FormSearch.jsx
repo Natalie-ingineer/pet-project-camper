@@ -8,6 +8,9 @@ import Autocomplete from '@mui/material/Autocomplete';
 import toast from 'react-hot-toast';
 import Button from 'shared/components/Button/Button';
 import { sprite } from 'shared/icons';
+// import FilterEquipment from 'shared/components/FilterEquipment/FilterEquipment';
+import FilterEquipmentList from 'modules/FilterEquipmentList/FilterEquipmentList';
+import FilterTypeCamper from 'modules/FilterTypeCamper/FilterTypeCamper';
 
 const FormSearch = () => {
   const [formData, setFormData] = useState({ location: '' });
@@ -68,6 +71,11 @@ const FormSearch = () => {
           )}
         />
       </div>
+      <p className={s.text}>Filters</p>
+      <p className={s.caption}>Vehicle equipment</p>
+      <FilterEquipmentList />
+      <p className={s.caption}>Vehicle type</p>
+      <FilterTypeCamper />
       <Button>Search</Button>
     </form>
   );

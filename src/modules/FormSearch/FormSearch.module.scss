@@ -37,6 +37,77 @@
   left: 18px; /* Розміщення іконки по горизонталі */
   top: 50%; /* Вертикальне центрування іконки */
   transform: translateY(-50%); /* Коригування для вертикального центрування */
-
   fill: gray; /* Колір іконки */
 }
+
+.text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(71, 84, 103, 1);
+  margin-top: 32px;
+  margin-bottom: 14px;
+}
+
+.caption {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+// .checkbox-card {
+//   position: relative;
+// }
+
+// .card {
+//   display: flex;
+//   align-items: center;
+//   padding: 10px 20px;
+//   border: 2px solid #ccc;
+//   border-radius: 5px;
+//   background-color: white;
+//   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+//   cursor: pointer;
+//   transition:
+//     border-color 0.3s,
+//     box-shadow 0.3s;
+// }
+
+// .card:hover {
+//   border-color: #007bff;
+//   box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+// }
+
+// .card .icon {
+//   margin-right: 10px;
+// }
+
+// .card .icon svg {
+//   font-size: 20px;
+//   color: #007bff;
+//   transition: color 0.3s;
+// }
+
+// .card .text {
+//   font-size: 16px;
+//   color: #333;
+// }
+
+// .checkbox-hidden:checked + .card {
+//   border-color: #28a745;
+//   box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+// }
+
+// .checkbox-hidden:checked + .card .icon svg {
+//   color: #28a745;
+// }
+
+// .checkbox-hidden {
+//   position: absolute;
+//   opacity: 0;
+//   pointer-events: none;
+//   display: none;
+// }
