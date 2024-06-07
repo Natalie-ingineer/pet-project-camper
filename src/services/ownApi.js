@@ -2,8 +2,7 @@ import axios from 'axios';
 import { createTgMessage } from 'shared/helpers';
 
 const instance = axios.create({
-  baseURL: 'https://api.irynaprudko.com.ua/api',
-  // baseURL: 'http://localhost:4040/api',
+  baseURL: 'https://65d8667dc96fbb24c1bb6f49.mockapi.io/camper',
 });
 
 export const sendTgMessage = async ({ formData, formType }) => {
