@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import { sprite } from '../../shared/icons';
 import { Suspense } from 'react';
 import Loader from '../../modules/Loader/Loader';
@@ -6,7 +6,7 @@ import Loader from '../../modules/Loader/Loader';
 import s from './Modal.module.scss';
 
 const Modal = ({ active, setActive }) => {
-  const location = useLocation();
+  // const location = useLocation();
 
   const getNavLinkClass = ({ isActive }) => {
     return isActive ? `${s.navLink} ${s.current}` : s.navLink;
@@ -76,9 +76,9 @@ const Modal = ({ active, setActive }) => {
           23-25 boasts a stylish and modern design, coupled with top-notch
           amenities to enhance your travel adventures. The interior is not only
           aesthetically pleasing but also functional, providing ample living and
-          sleeping space. Whether you're cruising along scenic highways or
+          sleeping space. Whether you`re cruising along scenic highways or
           parked in a picturesque campsite, this RV offers the perfect blend of
-          functionality and comfort. Inside, you'll find a fully equipped
+          functionality and comfort. Inside, you`ll find a fully equipped
           kitchen, complete with a refrigerator, microwave, and a three-burner
           hob, allowing you to prepare delicious meals on the go. The bathroom
           is fitted with a shower and toilet, ensuring you have the convenience
@@ -92,8 +92,8 @@ const Modal = ({ active, setActive }) => {
           transmission, this motorhome is not only easy to drive but also
           fuel-efficient, allowing you to focus on enjoying the journey rather
           than worrying about logistics. Create lasting memories with your loved
-          ones as you navigate the roads in the Road Bear C 23-25. It's not just
-          an RV; it's a mobile sanctuary for your adventures, promising comfort,
+          ones as you navigate the roads in the Road Bear C 23-25. It`s not just
+          an RV; it`s a mobile sanctuary for your adventures, promising comfort,
           style, and the freedom to explore at your own pace.
         </p>
 

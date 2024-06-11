@@ -7,7 +7,11 @@ import Modal from '../../../modules/Modal/Modal';
 
 import s from './CamperCard.module.scss';
 
-const CamperCard = ({ name, price, location, rating, description }) => {
+// {
+//   name, price, location, rating, description;
+// }
+
+const CamperCard = () => {
   const [modalActive, setModalActive] = useState(false);
 
   return (

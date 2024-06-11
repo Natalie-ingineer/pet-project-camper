@@ -1,5 +1,5 @@
 import { sprite } from 'shared/icons';
-import s from './Header.module.scss';
+// import s from './Header.module.scss';
 import Button from 'shared/components/Button/Button';
 import ButtonLoadMore from 'shared/components/ButtonLoadMore/ButtonLoadMore';
 import Categories from 'shared/components/Categories/Categories';

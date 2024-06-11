@@ -22,3 +22,42 @@
   color: rgba(71, 84, 103, 1);
   margin-bottom: 24px;
 }
+
+.formWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  /* width: 350px; */
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 500;
+  color: darkgray;
+  margin-top: 10px;
+}
+
+.fieldInput {
+  width: 400px;
+  border: 1px solid darkgrey;
+  border-radius: 10px;
+  padding: 18px;
+  gap: 10px;
+  background-color: rgba(247, 247, 247, 1);
+}
+
+.fieldInputComment {
+  width: 400px;
+  height: 114px;
+  border: 1px solid darkgrey;
+  border-radius: 10px;
+  padding: 18px;
+  gap: 10px;
+  background-color: rgba(247, 247, 247, 1);
+  margin-bottom: 24px;
+}
+// .wraper {
+//   margin-bottom: 25px;
+//   display: flex;
+//   flex-direction: column;
+// }
