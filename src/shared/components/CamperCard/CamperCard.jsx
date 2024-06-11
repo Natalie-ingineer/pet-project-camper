@@ -1,9 +1,15 @@
+import { useState } from 'react';
+
 import CategoriesList from '../../../modules/CategoriesList/CategoriesList';
 import { sprite } from 'shared/icons';
 import Button from '../../components/Button/Button';
+import Modal from '../../../modules/Modal/Modal';
+
 import s from './CamperCard.module.scss';
 
 const CamperCard = ({ name, price, location, rating, description }) => {
+  const [modalActive, setModalActive] = useState(false);
+
   return (
     // <>
     <div className={s.wrapCard}>
@@ -48,7 +54,12 @@ const CamperCard = ({ name, price, location, rating, description }) => {
             Discover the perfect blend of comfort and...
           </p>
           <CategoriesList />
-          <Button>Show more</Button>
+          <Button type="button" onClick={() => setModalActive(true)}>
+            Show more
+          </Button>
+          {modalActive && (
+            <Modal active={modalActive} setActive={setModalActive} />
+          )}
         </div>
       </div>
     </div>

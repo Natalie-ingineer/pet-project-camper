@@ -9,8 +9,8 @@ const FavoritePage = lazy(() => import('./pages/FavoritePage'));
 // const DetailsPage = lazy(() => import('./pages/DetailsPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
-// const Features = lazy(() => import('./Features'));
-// const Reviews = lazy(() => import('./Reviews'));
+const Features = lazy(() => import('./modules/Features/Features'));
+const Reviews = lazy(() => import('./modules/Reviews/Reviews'));
 
 const App = () => {
   return (
@@ -19,11 +19,11 @@ const App = () => {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/favorite" element={<FavoritePage />}>
-            {/* <Route path="features" element={<Features />} />
-            <Route path="reviews" element={<Reviews />} /> */}
+          <Route path="/catalog" element={<Catalog />}>
+            <Route path="features" element={<Features />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
+          <Route path="/favorite" element={<FavoritePage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

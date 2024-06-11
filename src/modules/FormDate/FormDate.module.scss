@@ -1,0 +1,24 @@
+.wrapForm {
+  width: 448px;
+  padding: 24px;
+  gap: 24px;
+  border-radius: 10px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  opacity: 0px;
+}
+
+.caption {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(71, 84, 103, 1);
+  margin-bottom: 24px;
+}

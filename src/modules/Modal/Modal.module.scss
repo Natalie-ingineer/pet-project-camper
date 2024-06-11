@@ -1,0 +1,140 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(17, 18, 19, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modalContent {
+  padding: 40px;
+  border-radius: 20px;
+  width: 982px;
+  height: 720px;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 1);
+  transform: scale(0.5);
+  transition: 0.4s all;
+}
+
+.modalContent.active {
+  transform: scale(1);
+}
+
+.btnClose {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+.wraper {
+  display: flex;
+}
+
+.camption {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.wrapReviews,
+.boxLocation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+.textReviews {
+  border-bottom: 1.5px solid rgba(16, 24, 40);
+}
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  margin-right: 11px;
+  margin-bottom: 24px;
+}
+.wrapImages {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+img {
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+
+.description {
+  color: rgba(71, 84, 103, 1);
+  margin-bottom: 24px;
+}
+
+.wrapNavLink {
+  margin: 0;
+  display: flex;
+  gap: 40px;
+  margin-bottom: 68px;
+}
+
+.navLink {
+  color: $typography-black;
+  font-size: 16px;
+  //   text-decoration: none;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  list-style-type: none;
+  display: block;
+  padding: 24px 0;
+  position: relative;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.current {
+  color: $typography-black;
+}
+.navLink:hover,
+.navLink:focus {
+  color: $typography-black;
+  font-weight: 700;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  left: 0;
+  width: 100%;
+  background-color: red;
+  transform: scaleX(0);
+  transition: transform 250ms linear;
+  bottom: -1px;
+  border-radius: 2px;
+}
+
+.navLink:hover::after,
+.navLink:focus::after,
+.current::after {
+  transform: scaleX(1);
+}

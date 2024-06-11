@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import s from './Button.module.scss';
 
-const Button = ({ to, children }) => {
+const Button = ({ children, onClick }) => {
   return (
-    <Link className={s.link} to={to}>
+    <button className={s.link} onClick={onClick}>
       {children}
-    </Link>
+    </button>
   );
 };
 export default Button;

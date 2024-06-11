@@ -1,0 +1,41 @@
+.features {
+  display: flex;
+  gap: 24px;
+}
+
+.wraper {
+  width: 430px;
+}
+
+.wrapFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 44px;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.wrapTable {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+}
