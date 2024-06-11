@@ -56,6 +56,20 @@ img {
   margin-bottom: 24px;
 }
 
+.wrapReviews,
+.boxLocation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 16px;
+}
+
+.textReviews {
+  border-bottom: 1.5px solid rgba(16, 24, 40);
+}
+
 .description {
-  margin-bottom: 24px;
+  width: 525px;
+  margin-bottom: 16px;
+  color: rgba(71, 84, 103, 1);
 }

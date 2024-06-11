@@ -1,5 +1,5 @@
+import CamperCardList from '../modules/CamperCardList/CamperCardList';
 import FormSearch from '../modules/FormSearch/FormSearch';
-import CamperCard from '../shared/components/CamperCard/CamperCard';
 
 const Catalog = () => {
   const divStyle = {
@@ -10,7 +10,7 @@ const Catalog = () => {
   return (
     <div style={divStyle}>
       <FormSearch />
-      <CamperCard />
+      <CamperCardList />
     </div>
   );
 };

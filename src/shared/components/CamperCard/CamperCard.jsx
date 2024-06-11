@@ -29,15 +29,19 @@ const CamperCard = ({ name, price, location, rating, description }) => {
 
         <div className={s.boxCard}>
           <div className={s.wrapLocation}>
-            <svg width="20" height="20">
-              <use xlinkHref={`${sprite}#icon-star`}></use>
-            </svg>
-            <p>4.4(2 Reviews)</p>
+            <div className={s.wrapReviews}>
+              <svg width="20" height="20">
+                <use xlinkHref={`${sprite}#icon-star`}></use>
+              </svg>
+              <p className={s.textReviews}>4.4(2 Reviews)</p>
+            </div>
 
-            <svg width="18" height="20">
-              <use xlinkHref={`${sprite}#icon-location`}></use>
-            </svg>
-            <p>Ukraine, Kiev</p>
+            <div className={s.boxLocation}>
+              <svg width="18" height="20">
+                <use xlinkHref={`${sprite}#icon-location`}></use>
+              </svg>
+              <p>Ukraine, Kiev</p>
+            </div>
           </div>
 
           <p className={s.description}>
