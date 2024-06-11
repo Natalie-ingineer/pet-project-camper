@@ -1,38 +1,54 @@
-import CategoriesList from 'modules/CategoriesList/CategoriesList';
+import CategoriesList from '../../../modules/CategoriesList/CategoriesList';
 import { sprite } from 'shared/icons';
+import Button from '../../components/Button/Button';
+import s from './CamperCard.module.scss';
 
 const CamperCard = ({ name, price, location, rating, description }) => {
   return (
-    <div>
-      <img src="https://ftp.goit.study/img/campers-test-task/1-2.webp" alt="" />
-
+    // <>
+    <div className={s.wrapCard}>
       <div>
-        <h3>{name}</h3>
-        <p>{price}</p>
+        <img
+          src="https://ftp.goit.study/img/campers-test-task/1-2.webp"
+          alt=""
+        />
       </div>
-      <button>
-        <svg width="24" height="22">
-          <use xlinkHref={`${sprite}#icon-heard`}></use>
-        </svg>
-      </button>
+      <div className={s.wrapper}>
+        <div className={s.wrapTitle}>
+          <h3 className={s.camption}>MaverLick</h3>
+          <div className={s.wrapPrice}>
+            <p className={s.price}>€8000,00</p>
 
-      <div>
-        <svg width="20" height="20">
-          <use xlinkHref={`${sprite}#icon-star`}></use>
-        </svg>
-        <p>{rating}(2 Reviews)</p>
-
-        <div>
-          <svg width="18" height="20">
-            <use xlinkHref={`${sprite}#icon-location`}></use>
-          </svg>
-          <p>{location}</p>
+            <button type="button" className={s.btnLike}>
+              <svg width="24" height="22">
+                <use xlinkHref={`${sprite}#icon-heard`}></use>
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <p>{description}</p>
-        <CategoriesList />
+        <div className={s.boxCard}>
+          <div className={s.wrapLocation}>
+            <svg width="20" height="20">
+              <use xlinkHref={`${sprite}#icon-star`}></use>
+            </svg>
+            <p>4.4(2 Reviews)</p>
+
+            <svg width="18" height="20">
+              <use xlinkHref={`${sprite}#icon-location`}></use>
+            </svg>
+            <p>Ukraine, Kiev</p>
+          </div>
+
+          <p className={s.description}>
+            Discover the perfect blend of comfort and...
+          </p>
+          <CategoriesList />
+          <Button>Show more</Button>
+        </div>
       </div>
     </div>
+    // </>
   );
 };
 

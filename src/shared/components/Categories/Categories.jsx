@@ -7,8 +7,8 @@ const Categories = ({ icon, adults, beds, text }) => {
       <svg width="20" height="20">
         <use xlinkHref={`${sprite}${icon}`}></use>
       </svg>
-      <p>{adults}</p>
-      <p>{beds}</p>
+      {adults && <p>{adults}</p>}
+      {beds && <p>{beds}</p>}
       <p>{text}</p>
     </div>
   );

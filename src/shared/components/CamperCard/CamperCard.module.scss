@@ -1,0 +1,61 @@
+.wrapCard {
+  display: flex;
+  width: 888px;
+  height: 358px;
+  padding: 24px;
+  gap: 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  opacity: 0px;
+}
+.wrapper {
+  width: 526px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.wrapTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.boxCard {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  width: 290px;
+  height: 310px;
+  border-radius: 20px;
+}
+
+.wrapPrice {
+  display: flex;
+}
+.camption {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+}
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  margin-right: 11px;
+}
+
+.btnLike {
+  display: flex;
+  align-items: center;
+}
+
+.wrapLocation {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.description {
+  margin-bottom: 24px;
+}

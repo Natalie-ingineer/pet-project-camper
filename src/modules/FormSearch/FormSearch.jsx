@@ -37,7 +37,7 @@ const FormSearch = () => {
   //   const dispatch = useDispatch();
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={s.formWrap}>
       <div className={s.fieldContainer}>
         <label htmlFor="combo-box-demo" className={s.description}>
           Location
@@ -46,7 +46,7 @@ const FormSearch = () => {
           disablePortal
           id="combo-box-demo"
           options={locationCity}
-          sx={{ width: 300 }}
+          sx={{ width: 360 }}
           renderInput={(params) => (
             <div style={{ position: 'relative' }}>
               <TextField
