@@ -11,23 +11,36 @@ import s from './CamperCard.module.scss';
 //   name, price, location, rating, description;
 // }
 
-const CamperCard = () => {
+const CamperCard = ({
+  gallery,
+  name,
+  price,
+  location,
+  rating,
+  description,
+}) => {
   const [modalActive, setModalActive] = useState(false);
+
+  const truncatedDescription = truncateText(description, 60);
+
+  function truncateText(text, maxLength) {
+    if (text.length <= maxLength) {
+      return text;
+    }
+    return text.substring(0, maxLength) + '...';
+  }
 
   return (
     // <>
     <div className={s.wrapCard}>
       <div>
-        <img
-          src="https://ftp.goit.study/img/campers-test-task/1-2.webp"
-          alt=""
-        />
+        <img src={gallery[0]} alt="camper" />
       </div>
       <div className={s.wrapper}>
         <div className={s.wrapTitle}>
-          <h3 className={s.camption}>MaverLick</h3>
+          <h3 className={s.camption}>{name}</h3>
           <div className={s.wrapPrice}>
-            <p className={s.price}>€8000,00</p>
+            <p className={s.price}>€{price}</p>
 
             <button type="button" className={s.btnLike}>
               <svg width="24" height="22">
@@ -43,20 +56,18 @@ const CamperCard = () => {
               <svg width="20" height="20">
                 <use xlinkHref={`${sprite}#icon-star`}></use>
               </svg>
-              <p className={s.textReviews}>4.4(2 Reviews)</p>
+              <p className={s.textReviews}>{rating}(2 Reviews)</p>
             </div>
 
             <div className={s.boxLocation}>
               <svg width="18" height="20">
                 <use xlinkHref={`${sprite}#icon-location`}></use>
               </svg>
-              <p>Ukraine, Kiev</p>
+              <p>{location}</p>
             </div>
           </div>
 
-          <p className={s.description}>
-            Discover the perfect blend of comfort and...
-          </p>
+          <p className={s.description}>{truncatedDescription}</p>
           <CategoriesList />
           <Button type="button" onClick={() => setModalActive(true)}>
             Show more
