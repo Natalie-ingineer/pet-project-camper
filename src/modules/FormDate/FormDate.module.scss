@@ -1,10 +1,11 @@
 .wrapForm {
   width: 448px;
   padding: 24px;
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   border-radius: 10px;
   border: 1px solid rgba(16, 24, 40, 0.2);
-  opacity: 0px;
 }
 
 .caption {
@@ -26,7 +27,7 @@
 .formWrap {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  //   gap: 14px;
   /* width: 350px; */
 }
 
@@ -42,8 +43,9 @@
   border: 1px solid darkgrey;
   border-radius: 10px;
   padding: 18px;
-  gap: 10px;
   background-color: rgba(247, 247, 247, 1);
+  display: flex;
+  position: relative;
 }
 
 .fieldInputComment {
@@ -56,8 +58,47 @@
   background-color: rgba(247, 247, 247, 1);
   margin-bottom: 24px;
 }
-// .wraper {
-//   margin-bottom: 25px;
-//   display: flex;
-//   flex-direction: column;
-// }
+
+.dateInput {
+  position: absolute;
+  // opacity: 0;
+  // z-index: -1;
+  width: 400px;
+  border: 1px solid darkgrey;
+  border-radius: 10px;
+  padding: 18px;
+  gap: 10px;
+  background-color: rgba(247, 247, 247, 1);
+}
+
+.customDateInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.customDateInput:before {
+  content: attr(placeholder);
+  color: #888;
+}
+
+.errorDate {
+  color: red;
+  margin-top: 5px;
+  // position: absolute;
+  // top: 18px;
+  // right: 50px;
+}
+
+span {
+  color: red;
+}
+svg {
+  //   display: flex;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}

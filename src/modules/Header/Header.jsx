@@ -1,115 +1,60 @@
-import { sprite } from 'shared/icons';
-// import s from './Header.module.scss';
-import Button from 'shared/components/Button/Button';
-import ButtonLoadMore from 'shared/components/ButtonLoadMore/ButtonLoadMore';
-import Categories from 'shared/components/Categories/Categories';
+import s from './Header.module.scss';
+import { mob, mob2x } from '../../shared/images/index';
+import { NavLink } from 'react-router-dom';
+// import ResponsiveAppBar from '../../modules/ResponsiveAppBar/ResponsiveAppBar';
 
 const Header = () => {
   return (
-    <div>
-      <svg width="20" height="20">
-        <use xlinkHref={`${sprite}#icon-star`}></use>
-      </svg>
-      <svg width="20" height="20">
-        <use xlinkHref={`${sprite}#icon-close`}></use>
-      </svg>
+    <header className={s.headerNav}>
+      <div className={s.wraper}>
+        <nav className={s.navigation}>
+          <p className={s.logo}>
+            Поїхали
+            <span className={s.logoStudio}>з нами</span>
+          </p>
+          <ul className={s.navList}>
+            <li className={s.navListItem}>
+              <NavLink
+                className={'s.navLink s.current'}
+                to="/catalog"
+                type="button"
+              >
+                Catalog
+              </NavLink>
+            </li>
 
-      <svg width="20" height="20">
-        <use xlinkHref={`${sprite}#icon-kitchen`}></use>
-      </svg>
+            <li className={s.navListItem}>
+              <NavLink className={s.navLink} to="/favorite" type="button">
+                Favorite
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
 
-      <svg width="20" height="20">
-        <use xlinkHref={`${sprite}#icon-petrol`}></use>
-      </svg>
+        <address className={s.navListContacts}>
+          <a href="tel:+380931773355" className={s.contactsListLink}>
+            +380 (93) 177-33-55
+          </a>
+        </address>
+      </div>
 
-      <svg width="24" height="24">
-        <use xlinkHref={`${sprite}#icon-air`}></use>
-      </svg>
-
-      <svg width="20" height="20">
-        <use xlinkHref={`${sprite}#icon-calendar`}></use>
-      </svg>
-
-      <svg width="32" height="32">
-        <use xlinkHref={`${sprite}#icon-tv`}></use>
-      </svg>
-
-      <svg width="32" height="32">
-        <use xlinkHref={`${sprite}#icon-shower`}></use>
-      </svg>
-
-      <svg width="40" height="28">
-        <use xlinkHref={`${sprite}#icon-camperVan`}></use>
-      </svg>
-
-      <svg width="40" height="28">
-        <use xlinkHref={`${sprite}#icon-camperFullyIntegrated`}></use>
-      </svg>
-
-      <svg width="40" height="28">
-        <use xlinkHref={`${sprite}#icon-camperAlcove`}></use>
-      </svg>
-
-      <svg width="24" height="22">
-        <use xlinkHref={`${sprite}#icon-heard`}></use>
-      </svg>
-
-      <svg width="24" height="22">
-        <use xlinkHref={`${sprite}#icon-heardred`}></use>
-      </svg>
-
-      <svg width="18" height="20">
-        <use xlinkHref={`${sprite}#icon-location`}></use>
-      </svg>
-
-      <svg width="20" height="20">
-        <use xlinkHref={`${sprite}#icon-conditioner`}></use>
-      </svg>
-
-      <svg width="18" height="18">
-        <use xlinkHref={`${sprite}#icon-cd`}></use>
-      </svg>
-
-      <svg width="18" height="18">
-        <use xlinkHref={`${sprite}#icon-radio`}></use>
-      </svg>
-
-      <svg width="20" height="15">
-        <use xlinkHref={`${sprite}#icon-hob`}></use>
-      </svg>
-
-      <svg width="20" height="20">
-        <use xlinkHref={`${sprite}#icon-toilet`}></use>
-      </svg>
-
-      <svg width="20" height="20">
-        <use xlinkHref={`${sprite}#icon-freezer`}></use>
-      </svg>
-
-      <svg width="20" height="20">
-        <use xlinkHref={`${sprite}#icon-gas`}></use>
-      </svg>
-
-      <svg width="20" height="20">
-        <use xlinkHref={`${sprite}#icon-water`}></use>
-      </svg>
-
-      <svg width="20" height="20">
-        <use xlinkHref={`${sprite}#icon-microwave`}></use>
-      </svg>
-
-      <h1>Home Page</h1>
-
-      <Button>Search</Button>
-      <ButtonLoadMore>Load more</ButtonLoadMore>
-      <Categories>
-        <svg width="20" height="20">
-          <use xlinkHref={`${sprite}#icon-users`}></use>
-        </svg>
-        <p>3</p>
-        <p>adults</p>
-      </Categories>
-    </div>
+      <div className={s.picture}>
+        <picture>
+          {/* <source
+          media="(min-width: 1440px)"
+          srcSet={`${desc} 1x, ${desc2x} 2x`}
+        />
+        <source media="(min-width: 768px)" srcSet={`${tab} 1x, ${tab2x} 2x`} /> */}
+          <img
+            srcSet={`${mob} 1x, ${mob2x} 2x`}
+            className={s.picture}
+            width={400}
+            height={650}
+            alt="Girl into camper"
+          />
+        </picture>
+      </div>
+    </header>
   );
 };
 

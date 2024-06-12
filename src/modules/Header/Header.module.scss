@@ -1,3 +1,120 @@
-.svg {
-  fill: $dark;
+.headerNav {
+  background: var(--primary-background);
+  border-bottom: 1px solid var(--color-button-portfolio);
+  box-shadow:
+    0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.wraper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2f4f7;
+  padding: 0 10px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: orangered;
+  padding: 24px 0;
+  margin-right: 120px;
+}
+
+.logoStudio {
+  color: black;
+}
+.navList {
+  gap: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navListItem {
+  display: flex;
+  padding: 0;
+}
+
+.navLink {
+  color: var(--background-color);
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  list-style-type: none;
+  display: block;
+  padding: 24px 0;
+  position: relative;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.current {
+  color: darkgray;
+}
+.navLink:hover,
+.navLink:focus {
+  color: darkgray;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  left: 0;
+  width: 100%;
+  background-color: darkgray;
+  transform: scaleX(0);
+  transition: transform 250ms linear;
+  bottom: -1px;
+  border-radius: 2px;
+}
+
+.navLink:hover::after,
+.navLink:focus::after,
+.navLink.current::after {
+  transform: scaleX(1);
+}
+
+.navListContacts {
+  font-style: normal;
+  margin-left: auto;
+}
+
+.contactsListLink {
+  color: orangered;
+  font-size: 16px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contactsListLink:hover,
+.contactsListLink:focus {
+  font-weight: 700;
+}
+
+.picture {
+  border-radius: 30px;
+  width: 100%;
+
+  background-size: cover;
+  position: relative;
 }
