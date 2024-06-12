@@ -27,8 +27,6 @@
 .formWrap {
   display: flex;
   flex-direction: column;
-  //   gap: 14px;
-  /* width: 350px; */
 }
 
 .text {
@@ -45,6 +43,7 @@
   padding: 18px;
   background-color: rgba(247, 247, 247, 1);
   display: flex;
+  justify-content: space-between;
   position: relative;
 }
 
@@ -61,8 +60,8 @@
 
 .dateInput {
   position: absolute;
-  // opacity: 0;
-  // z-index: -1;
+  opacity: 0;
+
   width: 400px;
   border: 1px solid darkgrey;
   border-radius: 10px;
@@ -71,34 +70,24 @@
   background-color: rgba(247, 247, 247, 1);
 }
 
-.customDateInput {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.customDateInput:before {
-  content: attr(placeholder);
-  color: #888;
-}
-
-.errorDate {
+.error {
   color: red;
   margin-top: 5px;
-  // position: absolute;
-  // top: 18px;
-  // right: 50px;
 }
 
 span {
   color: red;
 }
-svg {
-  //   display: flex;
+
+.datePickerContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.iconDate {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Іконка не заважає взаємодії з полем */
 }

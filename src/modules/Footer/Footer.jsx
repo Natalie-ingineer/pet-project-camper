@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import { sprite } from '../../shared/icons';
 import s from './Footer.module.scss';
 
@@ -11,10 +12,10 @@ const Footer = () => {
               <use xlinkHref={`${sprite}#icon-camperAlcove`}></use>
             </svg>
 
-            <p className={s.logo}>
+            <NavLink to="/" type="button" className={s.logo}>
               Поїхали
               <span className={s.logoStudio}> з нами</span>
-            </p>
+            </NavLink>
           </div>
           <p className={s.footerText}>
             Increase the flow of customers and sales for your business with

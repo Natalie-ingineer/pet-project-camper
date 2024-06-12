@@ -2,7 +2,6 @@ import { sprite } from 'shared/icons';
 import s from './Header.module.scss';
 
 import { NavLink } from 'react-router-dom';
-// import ResponsiveAppBar from '../../modules/ResponsiveAppBar/ResponsiveAppBar';
 
 const Header = () => {
   const getNavLinkClass = ({ isActive }) => {

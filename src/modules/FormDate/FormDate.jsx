@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { useId, useState } from 'react';
+import { useId, useRef, useState } from 'react';
 // import toast from 'react-hot-toast';
 
 import Button from '../../shared/components/Button/Button';
@@ -23,15 +23,19 @@ const userSchema = Yup.object().shape({
 
 const FormDate = () => {
   const [selectedDate, setSelectedDate] = useState('');
+  const datePickerRef = useRef(null);
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
+  const handleInputClick = () => {
+    datePickerRef.current.setOpen(true);
+  };
   const nameFieldId = useId();
   const emailFieldId = useId();
   const commentFieldId = useId();
-  // const dateFieldId = useId();
+  const dateFieldId = useId();
   return (
     <Formik
       initialValues={{ name: '', email: '', comments: '', date: '' }}
@@ -55,7 +59,6 @@ const FormDate = () => {
           <p className={s.description}>
             Stay connected! We are always ready to help you.
           </p>
-
           <div className={s.formWrap}>
             <label htmlFor={nameFieldId} />
 
@@ -68,7 +71,6 @@ const FormDate = () => {
             ></Field>
             <ErrorMessage className={s.error} name="name" component="span" />
           </div>
-
           <div className={s.formWrap}>
             <label htmlFor={emailFieldId} />
 
@@ -81,58 +83,36 @@ const FormDate = () => {
             ></Field>
             <ErrorMessage className={s.error} name="email" component="span" />
           </div>
-          <div className={s.fieldInput}>
-            <label htmlFor="date">Booking date</label>
+          <div className={s.datePickerContainer}>
+            {/* Поле вводу для відображення вибраної дати */}
+            <input
+              type="text"
+              className={s.dateInput}
+              onClick={handleInputClick}
+              value={selectedDate ? selectedDate.toLocaleDateString() : ''}
+              readOnly
+            />
+            {/* Компонент DatePicker, прихований, але викликається при кліку на поле вводу */}
+            <label htmlFor={dateFieldId}></label>
             <DatePicker
+              id={dateFieldId}
+              className={s.fieldInput}
               selected={selectedDate}
               onChange={handleDateChange}
-              className={s.dateInput}
+              ref={datePickerRef}
+              dateFormat="dd/MM/yyyy"
+              showYearDropdown
+              showMonthDropdown
+              dropdownMode="select"
+              popperPlacement="bottom-start"
+              style={{ display: 'none' }}
+              placeholderText="Booking date"
             />
-            <svg
-              width="20"
-              height="20"
-              // className="date-icon"
-              onClick={() =>
-                document
-                  .querySelector('.react-datepicker-wrapper input')
-                  .click()
-              }
-            >
+            <svg width="20" height="20" className={s.iconDate}>
               <use xlinkHref={`${sprite}#icon-calendar`}></use>
             </svg>
-            <ErrorMessage
-              className={s.errorDate}
-              name="date"
-              component="span"
-            />
+            <ErrorMessage className={s.error} name="date" component="span" />
           </div>
-          {/* <div className={s.fieldInput}>
-            <label htmlFor={dateFieldId}>
-              Booking date
-              <svg
-                width="20"
-                height="20"
-                onClick={() => document.querySelector(`${s.dateInput}`).click()}
-              >
-                <use xlinkHref={`${sprite}#icon-calendar`}></use>
-              </svg>
-            </label>
-
-            <Field
-              type="date"
-              name="date"
-              id={dateFieldId}
-              className={s.dateInput}
-              value={selectedDate}
-              onChange={handleDateChange}
-            />
-
-            <ErrorMessage
-              name="date"
-              component="div"
-              className={s.errorMessage}
-            />
-          </div> */}
 
           <div className={s.formWrap}>
             <label htmlFor={commentFieldId} />
