@@ -29,10 +29,11 @@
   color: orangered;
   padding: 24px 0;
   margin-right: 120px;
+  margin-left: 10px;
 }
 
 .logoStudio {
-  color: black;
+  color: $primary-text-color;
 }
 .navList {
   gap: 40px;
@@ -47,7 +48,7 @@
 }
 
 .navLink {
-  color: var(--background-color);
+  color: $primary-text-color;
   font-size: 16px;
   text-decoration: none;
   font-weight: 500;
@@ -63,11 +64,11 @@
 }
 
 .current {
-  color: darkgray;
+  color: blue;
 }
 .navLink:hover,
 .navLink:focus {
-  color: darkgray;
+  color: red;
 }
 
 .navLink::after {
@@ -77,7 +78,7 @@
   height: 4px;
   left: 0;
   width: 100%;
-  background-color: darkgray;
+  background-color: red;
   transform: scaleX(0);
   transition: transform 250ms linear;
   bottom: -1px;
@@ -86,7 +87,7 @@
 
 .navLink:hover::after,
 .navLink:focus::after,
-.navLink.current::after {
+.current::after {
   transform: scaleX(1);
 }
 
@@ -109,12 +110,4 @@
 .contactsListLink:hover,
 .contactsListLink:focus {
   font-weight: 700;
-}
-
-.picture {
-  border-radius: 30px;
-  width: 100%;
-
-  background-size: cover;
-  position: relative;
 }
