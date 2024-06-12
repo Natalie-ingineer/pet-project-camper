@@ -14,27 +14,3 @@ export const fetchCampers = createAsyncThunk(
     }
   }
 );
-
-export const addCamper = createAsyncThunk(
-  'camper/addCamper',
-  async (newCamper, thunkAPI) => {
-    try {
-      const response = await axios.post('/camper', newCamper);
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
-
-export const deleteCamper = createAsyncThunk(
-  'camper/deleteCamper',
-  async (camperId, thunkAPI) => {
-    try {
-      const response = await axios.delete(`/camper/${camperId}`);
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);

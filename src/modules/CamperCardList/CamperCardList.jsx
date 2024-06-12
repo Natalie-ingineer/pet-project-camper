@@ -1,15 +1,14 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import ButtonLoadMore from '../../shared/components/ButtonLoadMore/ButtonLoadMore';
 import CamperCard from '../../shared/components/CamperCard/CamperCard';
 import { selectVisibleCampers } from '../../redux/selectors';
 
 import s from './CamperCardList.module.scss';
-import { deleteCamper } from '../../redux/operations';
+
 import { useState } from 'react';
 
 const CamperCardList = () => {
-  const dispatch = useDispatch();
   const campersFilter = useSelector(selectVisibleCampers);
   // Стан для управління кількістю відображуваних карток
   const [visibleCampers, setVisibleCampers] = useState(4);
@@ -32,9 +31,6 @@ const CamperCardList = () => {
             location={camper.location}
             rating={camper.rating}
             description={camper.description}
-            onDelete={() => {
-              dispatch(deleteCamper(camper.id));
-            }}
           ></CamperCard>
         ))}
       </ul>

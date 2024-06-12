@@ -6,12 +6,11 @@ import Button from '../../components/Button/Button';
 import Modal from '../../../modules/Modal/Modal';
 
 import s from './CamperCard.module.scss';
-
-// {
-//   name, price, location, rating, description;
-// }
+import { useDispatch, useSelector } from 'react-redux';
+import { addFavorite, removeFavorite } from '../../../redux/favoritesSlice';
 
 const CamperCard = ({
+  camperId,
   gallery,
   name,
   price,
@@ -20,6 +19,28 @@ const CamperCard = ({
   description,
 }) => {
   const [modalActive, setModalActive] = useState(false);
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites);
+
+  const isFavorite = favorites.some((camper) => camper.id === camperId);
+
+  const handleClick = () => {
+    if (isFavorite) {
+      dispatch(removeFavorite({ id: camperId }));
+    } else {
+      dispatch(
+        addFavorite({
+          id: camperId,
+          gallery,
+          name,
+          price,
+          location,
+          rating,
+          description,
+        })
+      );
+    }
+  };
 
   const truncatedDescription = truncateText(description, 60);
 
@@ -42,10 +63,16 @@ const CamperCard = ({
           <div className={s.wrapPrice}>
             <p className={s.price}>€{price}</p>
 
-            <button type="button" className={s.btnLike}>
-              <svg width="24" height="22">
-                <use xlinkHref={`${sprite}#icon-heard`}></use>
-              </svg>
+            <button type="button" className={s.btnLike} onClick={handleClick}>
+              {isFavorite ? (
+                <svg width="24" height="22">
+                  <use xlinkHref={`${sprite}#icon-heardred`}></use>
+                </svg>
+              ) : (
+                <svg width="24" height="22">
+                  <use xlinkHref={`${sprite}#icon-heard`}></use>
+                </svg>
+              )}
             </button>
           </div>
         </div>
