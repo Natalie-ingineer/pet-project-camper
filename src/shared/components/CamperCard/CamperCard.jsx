@@ -17,6 +17,16 @@ const CamperCard = ({
   location,
   rating,
   description,
+  adults,
+  beds,
+  conditioner,
+  hob,
+  form,
+  length,
+  width,
+  height,
+  tank,
+  consumption,
 }) => {
   const [modalActive, setModalActive] = useState(false);
   const dispatch = useDispatch();
@@ -37,6 +47,16 @@ const CamperCard = ({
           location,
           rating,
           description,
+          adults,
+          beds,
+          conditioner,
+          hob,
+          form,
+          length,
+          width,
+          height,
+          tank,
+          consumption,
         })
       );
     }
@@ -52,7 +72,6 @@ const CamperCard = ({
   }
 
   return (
-    // <>
     <div className={s.wrapCard}>
       <div>
         <img src={gallery[0]} alt="camper" />
@@ -95,7 +114,12 @@ const CamperCard = ({
           </div>
 
           <p className={s.description}>{truncatedDescription}</p>
-          <CategoriesList />
+          <CategoriesList
+            adults={adults}
+            beds={beds}
+            conditioner={conditioner}
+            hob={hob}
+          />
           <Button type="button" onClick={() => setModalActive(true)}>
             Show more
           </Button>
@@ -109,12 +133,17 @@ const CamperCard = ({
               location={location}
               rating={rating}
               description={description}
+              form={form}
+              length={length}
+              width={width}
+              height={height}
+              tank={tank}
+              consumption={consumption}
             />
           )}
         </div>
       </div>
     </div>
-    // </>
   );
 };
 

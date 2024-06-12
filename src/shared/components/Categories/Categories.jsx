@@ -7,10 +7,10 @@ const Categories = ({ icon, adults, beds, conditioner, hob, text }) => {
       <svg width="20" height="20">
         <use xlinkHref={`${sprite}${icon}`}></use>
       </svg>
-      {adults && <p>{adults}</p>}
-      {beds && <p>{beds}</p>}
-      {conditioner && <p>{conditioner}</p>}
-      {hob && <p>{hob}</p>}
+      {adults && <p>{adults} </p>}
+      {beds && <p>{beds} </p>}
+      {conditioner && <p>{conditioner} </p>}
+      {hob && <p>{hob} </p>}
       <p>{text}</p>
     </div>
   );

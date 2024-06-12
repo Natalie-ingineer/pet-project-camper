@@ -2,18 +2,10 @@ import FormDate from '../../modules/FormDate/FormDate';
 import Categories from '../../shared/components/Categories/Categories';
 import s from './Features.module.scss';
 
-const Features = ({
-  adults,
-  beds,
-  conditioner,
-  hob,
-  form,
-  length,
-  width,
-  height,
-  tank,
-  consumption,
-}) => {
+const Features = ({ adults, beds, conditioner, hob, location }) => {
+  const { form, length, width, height, tank, consumption } =
+    location?.state || {};
+
   return (
     <div className={s.features}>
       <div className={s.wraper}>

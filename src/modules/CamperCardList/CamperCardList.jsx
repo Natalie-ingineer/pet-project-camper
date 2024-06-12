@@ -31,6 +31,16 @@ const CamperCardList = () => {
             location={camper.location}
             rating={camper.rating}
             description={camper.description}
+            adults={camper.adults}
+            beds={camper.beds}
+            conditioner={camper.conditioner}
+            hob={camper.hob}
+            form={camper.form}
+            length={camper.length}
+            width={camper.width}
+            height={camper.height}
+            tank={camper.tank}
+            consumption={camper.consumption}
           ></CamperCard>
         ))}
       </ul>

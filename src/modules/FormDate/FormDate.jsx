@@ -1,11 +1,8 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useId, useRef, useState } from 'react';
-// import toast from 'react-hot-toast';
 
 import Button from '../../shared/components/Button/Button';
-// import { useDispatch } from 'react-redux';
-// import { logIn } from '../../redux/auth/operations';
 
 import s from './FormDate.module.scss';
 import { sprite } from '../../shared/icons';
@@ -42,15 +39,6 @@ const FormDate = () => {
       validationSchema={userSchema}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
-        //     // same shape as initial values
-        //     dispatch(logIn(values))
-        //       .unwrap()
-        //       .then(() => {
-        //         toast.success('login success');
-        //       })
-        //       .catch(() => {
-        //         toast.error('login error');
-        //       });
       }}
     >
       {({ isSubmitting }) => (
