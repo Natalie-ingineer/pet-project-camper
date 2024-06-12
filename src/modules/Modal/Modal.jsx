@@ -103,6 +103,7 @@ const Modal = ({ active, setActive }) => {
               Features
             </NavLink>
           </li>
+
           <li>
             <NavLink to="reviews" className={getNavLinkClass}>
               Reviews

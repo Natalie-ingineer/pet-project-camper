@@ -99,7 +99,7 @@ img {
 .navLink {
   color: $typography-black;
   font-size: 16px;
-  //   text-decoration: none;
+
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -139,4 +139,8 @@ img {
 .navLink:focus::after,
 .current::after {
   transform: scaleX(1);
+}
+
+.line {
+  width: 500px;
 }

@@ -34,6 +34,7 @@ const Features = ({
           <Categories icon={'#icon-hob'} hob={hob} text={'hob'} />
         </div>
         <p className={s.text}>Vehicle details</p>
+        <hr className={s.line} />
         <div className={s.wrapTable}>
           <div className={s.box}>
             <p className={s.description}>Form</p>
