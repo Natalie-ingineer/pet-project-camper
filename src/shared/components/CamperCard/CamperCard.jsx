@@ -100,7 +100,16 @@ const CamperCard = ({
             Show more
           </Button>
           {modalActive && (
-            <Modal active={modalActive} setActive={setModalActive} />
+            <Modal
+              active={modalActive}
+              setActive={setModalActive}
+              gallery={gallery}
+              name={name}
+              price={price}
+              location={location}
+              rating={rating}
+              description={description}
+            />
           )}
         </div>
       </div>

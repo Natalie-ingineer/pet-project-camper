@@ -1,0 +1,47 @@
+.wraper {
+  display: flex;
+}
+
+.camption {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.wrapReviews,
+.boxLocation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+.textReviews {
+  border-bottom: 1.5px solid rgba(16, 24, 40);
+}
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  margin-right: 11px;
+  margin-bottom: 24px;
+}
+.wrapImages {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+img {
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+
+.description {
+  color: rgba(71, 84, 103, 1);
+  margin-bottom: 24px;
+}
